@@ -1,0 +1,143 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 8, 2023, 4:25:48 PM
+    Author     : user
+*/
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color:lightblue;
+    font-family: sans-serif;
+    padding: 80px 0px 20px 0px;
+}
+
+.header{
+    background-color:#076AFO;
+    height: 80px;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    max-height: 992px;
+    margin:0 auto;
+    
+    
+}
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+.nav_link{
+    
+    color: white;
+    text-decoration: none;
+    
+    
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    list-style: none;
+    
+}
+.nav_menu_item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+    
+    
+}
+
+.nav_menu_link{
+    padding: 8px 12px ;
+    border-radius: 10px;
+}
+
+.nav_menu_link:hover{
+    
+    background-color: #024070 ;
+    transition: 0.5s;
+}
+
+
+
+.aside{
+    background-color: lightgray;
+    position: fixed;
+    top: 80px;
+    width: 20%;
+    bottom: 20px;
+    
+}
+    
+.contenido{
+    background-color: lightpink;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    width: 80%;
+    bottom: 20px;
+    overflow-y: scroll;
+    padding: 20px;
+    
+    }
+    footer{
+    background-color: lightgreen;
+    position: fixed;
+    height: 20px;
+    width: 100%;
+    bottom: 0;
+    }
+    
+    .article {
+        
+        margin-bottom: 35px;
+        
+    }
+    
+ 
+    h2{
+        color:lightgreen;
+        
+    }
+    h3 {
+       color:lightskyblue;
+        
+    }
+    .texto_centrado{
+        text-align: center;
+    }
+    .texto_derecho{
+        text-align: right;
+    }
+ 
+    tbody tr:nth-child(odd){
+        background-color:#89aa34;
+    }
+    tbody tr:nth-child(even){
+        background-color:white;
+    }
+
+
+    
+
