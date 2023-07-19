@@ -1,4 +1,6 @@
+com\tienda_V1\demo\sevice\FirebaseStorageService.class
 com\tienda_V1\demo\sevice\CategoriaService.class
+com\tienda_V1\demo\sevice\impl\FirebaseStorageServiceImpl.class
 com\tienda_V1\demo\domain\Categoria.class
 com\tienda_V1\demo\controller\CategoriaController.class
 com\tienda_V1\demo\DemoApplication.class
