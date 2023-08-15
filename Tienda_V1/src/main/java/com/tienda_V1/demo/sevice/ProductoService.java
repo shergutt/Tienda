@@ -17,4 +17,12 @@ public interface ProductoService {
     
     // Se elimina el categoria que tiene el id pasado por parámetro
     public void delete(Producto categoria);
+    
+    public List<Producto> getByPrecio(double precioInf, double precioSup);
+    
+     //Lista de productos utilizando consultas con JPQL    
+    public List<Producto> consultaJPQL(double precioInf, double precioSup);
+
+//Lista de productos utilizando consultas con SQL Nativo
+    public List<Producto> consultaNativo(double precioInf, double precioSup);
 }
