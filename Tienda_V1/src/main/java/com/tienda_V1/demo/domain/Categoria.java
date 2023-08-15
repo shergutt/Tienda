@@ -2,6 +2,7 @@ package com.tienda_V1.demo.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
 
@@ -26,9 +27,8 @@ public class Categoria implements Serializable {
     @Column(name = "activo")
     private boolean activo;
 
-    @OneToMany
-    @JoinColumn(name = "id_categoria")
-    List<Producto> productos;
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Producto> productos = new ArrayList<>();
 
     public Categoria() {
     }

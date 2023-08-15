@@ -4,6 +4,7 @@
  */
 package com.tienda_V1.demo.controller;
 
+import com.tienda_V1.demo.domain.Categoria;
 import com.tienda_V1.demo.domain.Producto;
 import com.tienda_V1.demo.sevice.CategoriaService;
 import org.springframework.ui.Model;
@@ -52,20 +53,22 @@ public class ProductoController {
 
 
 
-    @PostMapping("/guardar")
-    public String productoGuardar(Producto producto,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {
-        if (!imagenFile.isEmpty()) {
-            productoService.save(producto);
-            producto.setRutaImagen(
-                    firebaseStorageService.cargaImagen(
-                            imagenFile,
-                            "producto",
-                            producto.getIdProducto()));
-        }
-        productoService.save(producto);
-        return "redirect:/producto/listado";
+@PostMapping("/guardar")
+public String categoriaGuardar(Categoria categoria,
+        @RequestParam("imagenFile") MultipartFile imagenFile) {
+    if (!imagenFile.isEmpty()) {
+        categoria.setRutaImagen(
+                firebaseStorageService.cargaImagen(
+                        imagenFile,
+                        "producto",
+                        categoria.getIdCategoria()));
     }
+    categoriaService.save(categoria);
+    return "redirect:/categoria/listado";
+}
+
+
+
 
     @GetMapping("/eliminar/{idProducto}")
     public String productoEliminar(Producto producto) {
@@ -73,11 +76,13 @@ public class ProductoController {
         return "redirect:/producto/listado";
     }
 
-    @GetMapping("/modificar/{idProducto}")
-    public String productoModificar(Producto producto, Model model) {
-        producto = productoService.getProducto(producto);
-        model.addAttribute("producto", producto);
-        return "/producto/modifica";
-    }
+@GetMapping("/modificar/{idProducto}")
+public String productoModificar(Producto producto, Model model) {
+    producto = productoService.getProducto(producto);
+    var categorias = categoriaService.getCategorias(true); // Obtener todas las categorías activas
+    model.addAttribute("producto", producto);
+    model.addAttribute("categorias", categorias); // Agregar las categorías al modelo
+    return "/producto/modifica";
+}
 }
 
